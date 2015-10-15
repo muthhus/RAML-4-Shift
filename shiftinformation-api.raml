@@ -1,0 +1,36 @@
+#%RAML 0.8
+---
+title: Rostering Application API
+baseUri: http://rostering.api.net
+version: v1
+
+
+
+schemas:
+  - shiftInformation: |
+      {
+        "type": "object",
+        "$schema": "http://json-schema.org/draft-03/schema",
+        "id": "http://jsonschema.net",
+        "required": true,
+        "properties": {
+          "shiftId": {
+            "type": "string",
+            "required": "true",
+            "minLength": 36,
+            "maxLength": 36
+          },
+          "shiftTitle":{
+            "type": string,
+            "required": true
+          },
+          "shiftStartDate": {
+            "type": string,
+            "required": true
+          },
+          "shiftEndDate": {
+            "type": string,
+            "required": true
+            }
+        }
+      }

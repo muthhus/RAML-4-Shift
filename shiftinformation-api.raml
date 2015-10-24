@@ -20,18 +20,39 @@ schemas:
             "minLength": 36,
             "maxLength": 36
           },
+          "shiftType": {
+            "type": "string",
+            "required": true
+          },
           "shiftTitle":{
-            "type": string,
+            "type": "string",
             "required": true
           },
           "shiftStartDate": {
-            "type": string,
+            "type": "string",
             "required": true
           },
           "shiftEndDate": {
-            "type": string,
+            "type": "string",
             "required": true
-            }
+          },
+          "shiftStartTime": {
+            "type": "string",
+            "required": true
+          },
+          "shiftEndTime": {
+            "type": "string",
+            "required": true
+          },
+          "actualShiftStartTime": {
+            "type": "string",
+            "required": true
+          },
+          "actualShiftEndTime": {
+            "type": "string",
+            "required": true
+          }
+
         }
       }
   - shiftListOfTask:  |

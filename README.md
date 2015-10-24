@@ -1,2 +1,2 @@
 # RAML-4-Shift
-RAML API for Shift application
+Generating RAML API for Shift application

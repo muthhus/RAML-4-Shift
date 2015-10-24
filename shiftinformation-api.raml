@@ -34,3 +34,34 @@ schemas:
             }
         }
       }
+  - shiftListOfTask:  |
+      {
+        "type":"object",
+        "$schema": "http://json-schema.org/draft-03/schema",
+        "id": "http://jsonschema.net",
+        "required": false,
+        "properties": {
+          "shiftId":  {
+            "type": "string",
+            "required": true,
+            "minLength":  36,
+            "maxLength":  36 
+          },
+          "taskStartTime": {
+            "type": "string",
+            "required": false
+          },
+          "taskEndTime": {
+            "type": "string",
+            "required": false
+          },
+          "actualStartTime": {
+            "type": "string",
+            "required": false
+          },
+          "actualEndTime": {
+            "type": "string",
+            "required": false
+          }
+        }
+      }

@@ -66,7 +66,7 @@ schemas:
             "type": "string",
             "required": true,
             "minLength":  36,
-            "maxLength":  36 
+            "maxLength":  36
           },
           "taskStartTime": {
             "type": "string",
@@ -94,3 +94,65 @@ schemas:
           }
         }
       }
+
+/shifts:
+  description: Collection of available shifts
+  get:
+    description: Get a list of shifts based on the shift title
+    queryParameters:
+      shiftTitle:
+        description: "Single Shift - Steve John 7:30 A.M - 3:30 P.M"
+        required: true
+        minLength: 3
+        type: string
+        example: "Steve J"
+    responses:
+      200:
+        body:
+          application/json:
+            example:  |
+                [
+                  {
+                    "shiftId": "550e8400-e29b-41d4-a716-446655440000",
+                    "shiftTitle": "Steve John 7:30 A.M - 3:30 P.M",
+                    "shiftType":  "Single Shift",
+                    "shiftStartDate": "01-12-2015",
+                    "shiftEndDate": "",
+                    "shiftStartTime": "07:30 A.M",
+                    "shiftEndTime": "03:30 P.M",
+                    "actualShiftStartTime": "07:13 A.M",
+                    "actualShiftEndTime": "03:13 P.M"
+                  }
+                ]
+   /{shiftId}:
+     description: Shift Entity
+     get:
+       description: Get the shift with 'shiftId = {shiftId}'
+       responses:
+         200:
+           body:
+             application/json:
+               example: |
+                  {
+                    "shiftId": "550e8400-e29b-41d4-a716-446655440000",
+                    "shiftType":  "Single Shift",
+                    "shiftTitle": "Steve John 7:30 A.M - 3:30 P.M",
+                    "shiftListOfTask": {
+                      "shiftListOfTaskId": "110e8300-e32b-41d4-a716-664400445500",
+                      "taskStartTime": "07:15 A.M",
+                      "taskEndTime": "07:20 A.M"
+                      }
+                  }
+         404:
+           body:
+             application/json:
+               example: |
+                  {"message": "Shift not found"}
+       /file-content:
+         description: The file to be reproduced by the client
+         get:
+           description: Geth the file content
+           responses:
+            200:
+         post:
+      post:
